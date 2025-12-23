@@ -6,7 +6,7 @@
 /*   By: lomont <lomont@student.42lehavre.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/23 00:40:53 by lomont            #+#    #+#             */
-/*   Updated: 2025/12/23 00:51:36 by lomont           ###   ########.fr       */
+/*   Updated: 2025/12/23 21:35:47 by lomont           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,16 @@
 
 Serializer::Serializer( void ) {
 	return ;
+}
+
+Serializer::Serializer( const Serializer& src ) {
+	(void)src;
+	return ;
+}
+
+Serializer& Serializer::operator=( const Serializer& other ) {
+	(void)other;
+	return (*this);
 }
 
 Serializer::~Serializer( void ) {
