@@ -6,14 +6,24 @@
 /*   By: lomont <lomont@student.42lehavre.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/23 00:48:29 by lomont            #+#    #+#             */
-/*   Updated: 2025/12/23 00:53:43 by lomont           ###   ########.fr       */
+/*   Updated: 2025/12/23 21:33:32 by lomont           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Data.hpp"
 
-Data::Data( void ) : str("Salut") {
+Data::Data( void ) : _name("MyNameIsAlban") {
 	return ;
+}
+
+Data::Data( const Data& src ) {
+	(void)src;
+	return;
+}
+
+Data& Data::operator=( const Data& other ) {
+	(void)other;
+	return (*this);
 }
 
 Data::~Data( void ) {
@@ -21,5 +31,5 @@ Data::~Data( void ) {
 }
 
 std::string& Data::getName( void ) {
-	return (str);
+	return (_name);
 }
