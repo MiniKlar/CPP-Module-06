@@ -6,7 +6,7 @@
 #    By: lomont <lomont@student.42lehavre.fr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/12 02:01:35 by lomont            #+#    #+#              #
-#    Updated: 2025/12/22 04:42:46 by lomont           ###   ########.fr        #
+#    Updated: 2025/12/24 00:47:11 by lomont           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ RM = rm -f
 SRC = ./main.cpp \
 		./utils.cpp \
 		./ScalarConverter.cpp \
+		./CheckOverflow.cpp \
 
 OBJ = $(SRC:.cpp=.o)
 
