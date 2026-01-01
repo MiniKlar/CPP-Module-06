@@ -6,13 +6,26 @@
 /*   By: lomont <lomont@student.42lehavre.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 12:56:32 by lomont            #+#    #+#             */
-/*   Updated: 2025/12/23 00:32:03 by lomont           ###   ########.fr       */
+/*   Updated: 2026/01/01 19:13:32 by lomont           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.hpp"
 
-typeVar check_type_variable(const char *str) {
+bool	checkSpecialCharacters(std::string str) {
+	bool	verbose[4] = {true, true, true, true};
+	if (str == "\\n") {
+		printValue('\n', 10, 10, 10, verbose);
+		return (true);
+	}
+	else if (str == "\\t") {
+		printValue('\t', 9, 9, 9, verbose);
+		return (true);
+	}
+	return (false);
+}
+
+typeVar checkTypeVariable(const char *str) {
 	int	i;
 	typeVar	eVar;
 
@@ -69,11 +82,23 @@ void printError(const std::string& printChar, const std::string& printInt, const
 	std::cout << "float: " << printFloat << std::endl << "double: " << printDouble << std::endl;
 }
 
-void printValue(char c, int i, float f, double d) {
-	if (std::isprint(static_cast<unsigned char>(c)))
-		std::cout << "char: '" << c << "'" << std::endl;
+void printValue(char c, int i, float f, double d, bool verbose[4]) {
+	if (verbose[0]) {
+		if (std::isprint(static_cast<unsigned char>(c)))
+			std::cout << "char: '" << c << "'" << std::endl;
+		else
+			std::cout << "char: Non displayable" << std::endl;
+	}
 	else
-		std::cout << "char: Non displayable" << std::endl;
-	std::cout << "int: " << i << std::endl;
-	std::cout << std::fixed << std::setprecision(1) << "float: " << f << "f" << std::endl << "double: " << d << std::endl;
+		std::cout << "char: impossible"<< std::endl;
+	if (verbose[1])
+		std::cout << "int: " << i << std::endl;
+	else
+		std::cout << "int: impossible" << std::endl;
+	std::cout << std::fixed << std::setprecision(1);
+	if (verbose[2])
+		std::cout << "float: " << f << "f" << std::endl;
+	else
+		std::cout << "float: impossible" << std::endl;
+	std::cout << "double: " << d << std::endl;
 }

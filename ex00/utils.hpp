@@ -6,7 +6,7 @@
 /*   By: lomont <lomont@student.42lehavre.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 12:56:50 by lomont            #+#    #+#             */
-/*   Updated: 2025/12/23 00:28:34 by lomont           ###   ########.fr       */
+/*   Updated: 2026/01/01 19:08:45 by lomont           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,10 @@ enum typeVar {
 	_ERROR
 };
 
-typeVar check_type_variable(const char *str);
+typeVar checkTypeVariable(const char *str);
 bool	checkErrors(const char *str);
 void	printError(const std::string& printChar, const std::string& printInt, const std::string& printFloat, const std::string& printDouble);
-void	printValue(char c, int i, float f, double d);
+void	printValue(char c, int i, float f, double d, bool verbose[4]);
+bool	checkSpecialCharacters(std::string str);
 
 #endif
