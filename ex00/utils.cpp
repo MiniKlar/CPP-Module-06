@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lomont <lomont@student.42lehavre.fr>       +#+  +:+       +#+        */
+/*   By: lomont <lomont@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 12:56:32 by lomont            #+#    #+#             */
-/*   Updated: 2026/01/01 19:13:32 by lomont           ###   ########.fr       */
+/*   Updated: 2026/01/13 18:33:12 by lomont           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,23 +39,27 @@ typeVar checkTypeVariable(const char *str) {
 	}
 	else if (!str[i + 1]) {
 		eVar = _CHAR;
-		return eVar;
+		return ( eVar );
 	}
 	while (str[i]) {
 		if (str[i] == 'f' && (eVar == _INT || eVar == _DOUBLE)) {
 			eVar = _FLOAT;
 			if (str[i + 1])
-				return (_ERROR);
+				return ( _ERROR );
 		}
-		else if (str[i] == '.' && eVar == _INT)
+		else if (str[i] == '.' && eVar == _INT) {
+			if (!isdigit(static_cast<unsigned int>(str[i + 1]))) {
+				return ( _ERROR );
+			}
 			eVar = _DOUBLE;
+		}
 		else if (!isdigit(static_cast<unsigned int>(str[i])) && str[i] != 'f') {
 			eVar = _ERROR;
 			break;
 		}
 		i++;
 	}
-	return (eVar);
+	return ( eVar );
 }
 
 bool checkErrors(const char *str) {
