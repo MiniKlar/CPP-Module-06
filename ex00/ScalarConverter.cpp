@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lomont <lomont@student.42lehavre.fr>       +#+  +:+       +#+        */
+/*   By: lomont <lomont@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 12:10:02 by lomont            #+#    #+#             */
-/*   Updated: 2026/01/01 19:22:47 by lomont           ###   ########.fr       */
+/*   Updated: 2026/01/13 18:35:37 by lomont           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ ScalarConverter::ScalarConverter( const ScalarConverter &src ) {
 
 ScalarConverter& ScalarConverter::operator=( const ScalarConverter &other ) {
 	(void)other;
-	return (*this);
+	return ( *this );
 }
 
 void ScalarConverter::convert(const char *str) {
