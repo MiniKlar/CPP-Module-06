@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lomont <lomont@student.42lehavre.fr>       +#+  +:+       +#+        */
+/*   By: lomont <lomont@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/23 00:40:33 by lomont            #+#    #+#             */
-/*   Updated: 2025/12/23 21:46:05 by lomont           ###   ########.fr       */
+/*   Updated: 2026/01/13 18:57:15 by lomont           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int main( void ) {
 
 	std::cout << "Voici l'adresse du pointeur before = " << before << std::endl;
 	std::cout << before->getName() << std::endl;
+	std::cout << before->getAge() << std::endl;
 
 	ptr = Serializer::serialize(before);
 	std::cout << "Voici l'adresse uintptr = " << ptr << std::endl;
@@ -29,6 +30,7 @@ int main( void ) {
 
 	after = Serializer::deserialize(ptr);
 	std::cout << after->getName() << std::endl;
+	std::cout << after->getAge() << std::endl;
 
 	delete after;
 	return (0);
