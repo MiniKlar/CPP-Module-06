@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Data.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lomont <lomont@student.42lehavre.fr>       +#+  +:+       +#+        */
+/*   By: lomont <lomont@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/23 00:48:29 by lomont            #+#    #+#             */
-/*   Updated: 2025/12/23 21:33:32 by lomont           ###   ########.fr       */
+/*   Updated: 2026/01/13 18:56:11 by lomont           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Data.hpp"
 
-Data::Data( void ) : _name("MyNameIsAlban") {
+Data::Data( void ) : _name("MyNameIsAlban"), _age(3) {
 	return ;
 }
 
@@ -32,4 +32,8 @@ Data::~Data( void ) {
 
 std::string& Data::getName( void ) {
 	return (_name);
+}
+
+int& Data::getAge( void ) {
+	return (_age);
 }
