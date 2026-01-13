@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   CheckOverflow.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lomont <lomont@student.42lehavre.fr>       +#+  +:+       +#+        */
+/*   By: lomont <lomont@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/24 00:31:50 by lomont            #+#    #+#             */
-/*   Updated: 2025/12/30 23:45:23 by lomont           ###   ########.fr       */
+/*   Updated: 2026/01/13 18:35:17 by lomont           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ static bool	checkIntOverflow(double d) {
 
 static bool	checkFloatOverflow(double d) {
 	if (d < -FLT_MAX || d > FLT_MAX) {
-		std::cout << "x" << std::endl;
 		return (false);
 	}
 	else if (std::isnan(d) || std::isinf(d))
